@@ -87,8 +87,9 @@ const ohMy = () => {
     axios.get('http://localhost:3000/animals')
     .then(function(res) {
         for(let i =0; i < res.data.length; i++) { 
-            let oob = document.createElement('p').textContent = res.data[i];
-            document.querySelector('body').appendChild(oob);
+            let newP = document.createElement('p');
+            newP.textContent = res.data[i];
+            document.querySelector('body').appendChild(newP);
         }
     })
     .catch(error => {
